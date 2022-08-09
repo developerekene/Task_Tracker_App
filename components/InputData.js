@@ -23,9 +23,46 @@ export default function InputData(){
                <View>
                     <TextInput style={{height: 147, backgroundColor: '#B8FDBB', borderRadius: 12, marginTop: 10, padding: 1}}/>
                </View>
-               <View style={{height: 46, borderRadius: 12, backgroundColor: '#B8FDBB', marginTop: 10}}>
-
+               <View style={{
+                    flexDirection: 'row',
+                    height: 46, 
+                    borderRadius: 12, 
+                    backgroundColor: '#B8FDBB', 
+                    marginTop: 10, 
+                    alignItems: 'center',
+                    paddingLeft: 10,
+                    paddingRight: 10,
+                    justifyContent: 'space-between'}}>
+               <View style={{
+                     
+                    flexDirection: 'row', 
+                    }}>
+                    <TouchableOpacity style={{marginRight: 10}}>
+                         <Image source={require('../images/akar-icons_image.png')}/>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={{marginRight: 10}}>
+                         <Image source={require('../images/nimbus_notification.png')}/>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={{marginRight: 10}}>
+                         <Image source={require('../images/eva_color-palette-outline.png')}/>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={{marginRight: 10}}>
+                         <Image source={require('../images/material-symbols_archive-outline-rounded.png')}/>
+                    </TouchableOpacity>
                </View>
+               <View style={{flexDirection: 'row'}}>
+                    <TouchableOpacity style={{marginRight: 10}}>
+                         <Image source={require('../images/fluent_arrow-hook-up-left-24-filled.png')}/>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={{marginRight: 50}}>
+                         <Image source={require('../images/fluent_arrow-hook-up-left-24-filled1.png')}/>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={{marginRight: 5}}>
+                         <Image source={require('../images/Group1817.png')}/>
+                    </TouchableOpacity>
+               </View>
+               </View>
+               
           </View>
      )
 }
