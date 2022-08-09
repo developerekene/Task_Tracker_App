@@ -47,14 +47,21 @@ export default function TabLayoutContainer(){
                          }}/>
                     <Tab.Screen name={"EmptyScreen"} component={MyEmptyScreen} options={{headerShown: false,
                     tabBarIcon: ({focused}) => (
-                         <TouchableOpacity>
-                              <View>
-                                   <Image style={{marginTop: -20}} source={require('../images/Base.png')}>
-                                        
-                                   </Image>
+                         
+                         <TouchableOpacity style={{
+                              backgroundColor: COLORS.iconPrimaryColor, 
+                              height: 50, 
+                              width: 50, 
+                              padding: 12, 
+                              borderRadius: 50, 
+                              alignItems: 'center',
+                              marginTop: -30
+                              }}>
+                              
+                                   <Image source={require('../images/coolicon.png')}/>
                                    {/* <FontAwesome5 style={{ marginRight: }} name='bell' size={20} color={focused ? COLORS.iconPrimaryColor : COLORS.onFocusedColor}/> */}
                                    
-                              </View>
+                              
                          </TouchableOpacity>
                          // <View>
                          //      
