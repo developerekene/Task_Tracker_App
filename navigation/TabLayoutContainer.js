@@ -2,7 +2,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import React from 'react'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
-import { View, Text } from 'react-native'
+import { View, Text, TouchableOpacity, Image } from 'react-native'
 
 
 import HomeScreen from './TabScreens/HomeScreen';
@@ -10,13 +10,14 @@ import NotificationScreen from './TabScreens/NotificationScreen';
 import SearchScreen from './TabScreens/SearchScreen';
 import SettingScreen from './TabScreens/SettingScreen';
 import { COLORS } from '../Constants/colors';
+import EmptyScreen from './TabScreens/EmptyScreen';
 
 
 const Tab = createBottomTabNavigator();
 export default function TabLayoutContainer(){
      return(
           <NavigationContainer>
-               <Tab.Navigator initialRouteName={HomeScreen}>
+               <Tab.Navigator initialRouteName={HomeScreen} tabBarShowLabel={false}>
                     <Tab.Screen 
                     name={"Home"} 
                     component={HomeScreen} 
@@ -44,6 +45,25 @@ export default function TabLayoutContainer(){
                             ),
 
                          }}/>
+                    <Tab.Screen name={"EmptyScreen"} component={MyEmptyScreen} options={{headerShown: false,
+                    tabBarIcon: ({focused}) => (
+                         <TouchableOpacity>
+                              <View>
+                                   <Image style={{marginTop: -20}} source={require('../images/Base.png')}>
+                                        
+                                   </Image>
+                                   {/* <FontAwesome5 style={{ marginRight: }} name='bell' size={20} color={focused ? COLORS.iconPrimaryColor : COLORS.onFocusedColor}/> */}
+                                   
+                              </View>
+                         </TouchableOpacity>
+                         // <View>
+                         //      
+                         // </View>
+                    ),
+                    tabBarLabel: ({focused}) => (
+                         <Text style={{color: focused ? 'white' : 'white', fontSize: 10}}>Notifications</Text>
+                       ),
+                    }}/>
                     <Tab.Screen name={"Notification"} component={NotificationScreen} options={{headerShown: false,
                     tabBarIcon: ({focused}) => (
                          <View>
@@ -67,5 +87,12 @@ export default function TabLayoutContainer(){
                     
                </Tab.Navigator>
           </NavigationContainer>
+     );
+}
+function MyEmptyScreen() {
+     return(
+          <View>
+
+          </View>
      );
 }
