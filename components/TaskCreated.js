@@ -19,12 +19,59 @@ export default function TaskCreated(){
                          height: 50,
                          padding:10,
                          marginRight: 25,
-                         borderRadius: 12
+                         borderRadius: 12,
+                         marginBottom: 10
                          }}>
                          <View style={{flexDirection: 'row',}}>
                               <Image style={{marginRight: 10}} source={require('../images/Rectangle3.png')}/>
-                              <Text>
+                              <Text style={{fontSize: 12}}>
                                    Contact the CEO of Decagon.
+                              </Text>
+                         </View>
+                         <View style={{flexDirection: 'row'}}>
+                              <Image style={{paddingRight: 5}} source={require('../images/pen-2-line.png')}/>
+                              <Image source={require('../images/majesticons_delete-bin-line.png')}/>
+                         </View>
+                    </View>
+                    <View style={{
+                         flexDirection: 'row', 
+                         justifyContent: 'space-between', 
+                         marginLeft: 25, 
+                         paddingLeft: 10, 
+                         backgroundColor: '#CAB8FD',
+                         height: 50,
+                         padding:10,
+                         marginRight: 25,
+                         borderRadius: 12,
+                         marginBottom: 10
+                         }}>
+                         <View style={{flexDirection: 'row',}}>
+                              <Image style={{marginRight: 10}} source={require('../images/Rectangle3.png')}/>
+                              <Text style={{fontSize: 12}}>
+                                   {"Design the onboarding session of \n task tracker App"}
+                              </Text>
+                         </View>
+                         <View style={{flexDirection: 'row'}}>
+                              <Image style={{paddingRight: 5}} source={require('../images/pen-2-line.png')}/>
+                              <Image source={require('../images/majesticons_delete-bin-line.png')}/>
+                         </View>
+                    </View>
+                    <View style={{
+                         flexDirection: 'row', 
+                         justifyContent: 'space-between', 
+                         marginLeft: 25, 
+                         paddingLeft: 10, 
+                         backgroundColor: '#FDB8B8',
+                         height: 50,
+                         padding:10,
+                         marginRight: 25,
+                         borderRadius: 12,
+                         marginBottom: 10
+                         }}>
+                         <View style={{flexDirection: 'row',}}>
+                              <Image style={{marginRight: 10}} source={require('../images/Rectangle3.png')}/>
+                              <Text style={{fontSize: 12}}>
+                                   {"Remind the technical team to include \n the micro-interactions delivered"}
                               </Text>
                          </View>
                          <View style={{flexDirection: 'row'}}>
