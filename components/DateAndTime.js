@@ -6,9 +6,7 @@ export default function DateAndTime(){
           <View style={{paddingLeft: 25, paddingRight: 25, marginTop: 10}}>
                <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
                     <View style={{flexDirection: 'row', alignItems: 'center'}}>
-                         <TouchableOpacity>
-                              <Image source={require('../images/majesticons_clock-line.png')}/>
-                         </TouchableOpacity>
+                         <Image source={require('../images/majesticons_clock-line.png')}/>
                          <Text style={{paddingLeft: 10, paddingRight: 20}}>
                               Jul 26, 2022
                          </Text>
@@ -22,6 +20,14 @@ export default function DateAndTime(){
                               All day
                          </Text>
                     </View>
+               </View>
+               <View style={{flexDirection: 'row', marginTop: 15}}>
+                    <Text style={{marginLeft: 30}}>
+                         Does not repeat
+                    </Text>
+                    <TouchableOpacity style={{marginTop: 8, marginLeft: 5}}>
+                         <Image source={require('../images/Vector4.png')}/>
+                    </TouchableOpacity>
                </View>
           </View>
      );
