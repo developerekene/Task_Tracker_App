@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text } from 'react-native';
+import { View,ScrollView } from 'react-native';
 import DateAndTime from '../../components/DateAndTime';
 import InputData from '../../components/InputData';
 import TaskCreated from '../../components/TaskCreated';
@@ -10,8 +10,12 @@ export default function HomeScreen(){
           <View>
                <TopIcons />
                <InputData />
-               <DateAndTime />
-               <TaskCreated />
+               <ScrollView>
+                    
+                    <DateAndTime />
+                    <TaskCreated />
+                    
+               </ScrollView>
           </View>
      );
 }

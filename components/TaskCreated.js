@@ -3,7 +3,8 @@ import { View, Image, TouchableOpacity, Text, TextInput, ScrollView } from 'reac
 
 export default function TaskCreated(){
      return(
-          <View>
+          <ScrollView>
+               <View>
                <View style={{justifyContent: 'space-between', flexDirection: 'row', marginLeft: 25, marginRight: 25, marginTop: 15, marginBottom: 15, }}>
                     <Text style={{fontWeight: '400', fontSize: 18, lineHeight: 27}}>
                          Task Created
@@ -79,7 +80,12 @@ export default function TaskCreated(){
                               <Image source={require('../images/majesticons_delete-bin-line.png')}/>
                          </View>
                     </View>
+                    <View style={{alignItems: 'center'}}>
+                         <Image style={{paddingRight: 5}} source={require('../images/Chart13.png')}/>
+                    </View>
           </View>
+          </ScrollView>
+          
                
      );
 }
