@@ -15,12 +15,12 @@ export default function TaskCreated(){
                     <View style={{
                          flexDirection: 'row', 
                          justifyContent: 'space-between', 
-                         marginLeft: 25, 
+                         marginLeft: SIZES.sideMarginLeft, 
                          paddingLeft: 10, 
-                         backgroundColor: '#D9D9D9',
+                         backgroundColor: COLORS.itemCreatedBackgroundOne,
                          height: 50,
                          padding:10,
-                         marginRight: 25,
+                         marginRight: SIZES.sideMarginRight,
                          borderRadius: 12,
                          marginBottom: 10
                          }}>

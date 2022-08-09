@@ -1,9 +1,11 @@
 import * as React from 'react'
 import { View, Image, TouchableOpacity, Text, TextInput } from 'react-native';
+import { COLORS } from '../Constants/colors';
+import { SIZES } from '../Constants/Tools';
 
 export default function DateAndTime(){
      return(
-          <View style={{paddingLeft: 25, paddingRight: 25, marginTop: 10}}>
+          <View style={{paddingLeft: SIZES.sideMarginLeft, paddingRight: SIZES.sideMarginRight, marginTop: 10}}>
                <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
                     <View style={{flexDirection: 'row', alignItems: 'center'}}>
                          <Image source={require('../images/majesticons_clock-line.png')}/>
@@ -29,24 +31,29 @@ export default function DateAndTime(){
                          <Image source={require('../images/Vector4.png')}/>
                     </TouchableOpacity>
                </View>
-               <View style={{flexDirection: 'row', alignItems: 'center', marginTop: 15, justifyContent: 'center'}}>
+               <View style={{flexDirection: 'row', alignItems: 'center', marginTop: 15, justifyContent: 'space-between'}}>
                     <View style={{flexDirection: 'row'}}>
-                         <Image style={{marginTop: 5}} source={require('../images/majesticons_timer-line.png')}/>
-                         <View style={{marginTop: 8, marginLeft: 5, borderRadius: 12}}>
+                         <Image style={{marginTop: 10}} source={require('../images/majesticons_timer-line.png')}/>
+                         <View style={{marginTop: 8, marginLeft: 5, padding: 5, borderRadius: 10, borderWidth: 1}}>
                               <Text style={{textAlign: 'center'}}>
                                    12:00 AM
                               </Text>
                          </View>
-                         <Image style={{marginTop: 10, marginLeft: 5}} source={require('../images/Line1.png')}/>
-                         <TouchableOpacity style={{marginTop: 8, marginLeft: 5}}>
+                         <Image style={{marginTop: 22, marginLeft: 5}} source={require('../images/Line1.png')}/>
+                         <TouchableOpacity style={{marginTop: 8, marginLeft: 5, padding: 5, borderRadius: 10, borderWidth: 1}}>
                               <Text>
                                    01:00 PM
                               </Text>
                          </TouchableOpacity>
                     </View>
-                    <View style={{flexDirection: 'row', marginLeft: 140}}>
-                         <TouchableOpacity style={{marginTop: 8, marginLeft: 5}}>
-                              <Text>
+                    <View style={{flexDirection: 'row'}}>
+                         <TouchableOpacity style={{marginTop: 8, marginLeft: 5, backgroundColor: COLORS.itemCreatedBackgroundThree, padding: 5, borderRadius: 10, borderWidth: 1}}>
+                              <Text style={{
+                                   fontSize: 16,
+                                   fontWeight: '500',
+                                   lineHeight: 24,
+                                   letterSpacing: 0.06
+                              }}>
                                    1hr:00:00
                               </Text>
                          </TouchableOpacity>
