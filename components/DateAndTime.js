@@ -29,6 +29,30 @@ export default function DateAndTime(){
                          <Image source={require('../images/Vector4.png')}/>
                     </TouchableOpacity>
                </View>
+               <View style={{flexDirection: 'row', alignItems: 'center', marginTop: 15, justifyContent: 'center'}}>
+                    <View style={{flexDirection: 'row'}}>
+                         <Image style={{marginTop: 5}} source={require('../images/majesticons_timer-line.png')}/>
+                         <View style={{marginTop: 8, marginLeft: 5, borderRadius: 12}}>
+                              <Text style={{textAlign: 'center'}}>
+                                   12:00 AM
+                              </Text>
+                         </View>
+                         <Image style={{marginTop: 10, marginLeft: 5}} source={require('../images/Line1.png')}/>
+                         <TouchableOpacity style={{marginTop: 8, marginLeft: 5}}>
+                              <Text>
+                                   01:00 PM
+                              </Text>
+                         </TouchableOpacity>
+                    </View>
+                    <View style={{flexDirection: 'row', marginLeft: 140}}>
+                         <TouchableOpacity style={{marginTop: 8, marginLeft: 5}}>
+                              <Text>
+                                   1hr:00:00
+                              </Text>
+                         </TouchableOpacity>
+                    </View>
+                    
+               </View>
           </View>
      );
 }
