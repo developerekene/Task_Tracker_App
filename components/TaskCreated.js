@@ -1,9 +1,10 @@
 import * as React from 'react'
 import { View, Image, TouchableOpacity, Text, TextInput, ScrollView } from 'react-native';
+import { COLORS } from '../Constants/colors';
+import { SIZES } from '../Constants/Tools';
 
 export default function TaskCreated(){
      return(
-          <ScrollView>
                <View>
                <View style={{justifyContent: 'space-between', flexDirection: 'row', marginLeft: 25, marginRight: 25, marginTop: 15, marginBottom: 15, }}>
                     <Text style={{fontWeight: '400', fontSize: 18, lineHeight: 27}}>
@@ -37,12 +38,12 @@ export default function TaskCreated(){
                     <View style={{
                          flexDirection: 'row', 
                          justifyContent: 'space-between', 
-                         marginLeft: 25, 
+                         marginLeft: SIZES.sideMarginLeft, 
                          paddingLeft: 10, 
-                         backgroundColor: '#CAB8FD',
+                         backgroundColor: COLORS.itemCreatedBackgroundTwo,
                          height: 50,
                          padding:10,
-                         marginRight: 25,
+                         marginRight: SIZES.sideMarginRight,
                          borderRadius: 12,
                          marginBottom: 10
                          }}>
@@ -60,12 +61,12 @@ export default function TaskCreated(){
                     <View style={{
                          flexDirection: 'row', 
                          justifyContent: 'space-between', 
-                         marginLeft: 25, 
+                         marginLeft: SIZES.sideMarginLeft, 
                          paddingLeft: 10, 
-                         backgroundColor: '#FDB8B8',
+                         backgroundColor: COLORS.itemCreatedBackgroundThree,
                          height: 50,
                          padding:10,
-                         marginRight: 25,
+                         marginRight: SIZES.sideMarginRight,
                          borderRadius: 12,
                          marginBottom: 10
                          }}>
@@ -80,11 +81,10 @@ export default function TaskCreated(){
                               <Image source={require('../images/majesticons_delete-bin-line.png')}/>
                          </View>
                     </View>
-                    <View style={{alignItems: 'center'}}>
+                    <View style={{alignItems: 'center', marginBottom: 30}}>
                          <Image style={{paddingRight: 5}} source={require('../images/Chart13.png')}/>
                     </View>
           </View>
-          </ScrollView>
           
                
      );

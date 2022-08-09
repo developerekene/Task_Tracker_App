@@ -7,15 +7,13 @@ import TopIcons from '../../components/TopIcons';
 
 export default function HomeScreen(){
      return(
-          <View>
-               <TopIcons />
-               <InputData />
-               <ScrollView>
-                    
+          <ScrollView>
+               <View>
+                    <TopIcons />
+                    <InputData />
                     <DateAndTime />
                     <TaskCreated />
-                    
-               </ScrollView>
-          </View>
+               </View>
+          </ScrollView>
      );
 }
