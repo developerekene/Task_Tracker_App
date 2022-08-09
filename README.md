@@ -10,7 +10,7 @@ COMPONENTS FOLDER
 This contains all individual components of the app.
 
 NAVIGATION FOLDER
-This contains all the various screens for the mobile app. Main Container is the root container, it contains all other screens. Tablayout Container contains all the various tab screens.
+This contains all the various screens for the mobile app. TabLayout Container is the root container, it contains all other screens. Tablayout Container contains all the various tab screens.
 
 TO RUN APP
 To run the app:

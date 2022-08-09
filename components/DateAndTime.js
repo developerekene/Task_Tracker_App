@@ -1,8 +1,9 @@
 import * as React from 'react'
-import { View, Image, TouchableOpacity, Text, TextInput } from 'react-native';
+import { View, Image, TouchableOpacity, Text} from 'react-native';
 import { COLORS } from '../Constants/colors';
 import { SIZES } from '../Constants/Tools';
 
+//This component carries the Alarm time and countdown
 export default function DateAndTime(){
      return(
           <View style={{paddingLeft: SIZES.sideMarginLeft, paddingRight: SIZES.sideMarginRight, marginTop: 10}}>

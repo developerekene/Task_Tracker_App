@@ -4,20 +4,26 @@ import React from 'react'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 import { View, Text, TouchableOpacity, Image } from 'react-native'
 
-
+//Importing Screens
 import HomeScreen from './TabScreens/HomeScreen';
 import NotificationScreen from './TabScreens/NotificationScreen';
 import SearchScreen from './TabScreens/SearchScreen';
 import SettingScreen from './TabScreens/SettingScreen';
+
+//Importing Color
 import { COLORS } from '../Constants/colors';
-import EmptyScreen from './TabScreens/EmptyScreen';
 
-
+//Creating variable for bottom tabs
 const Tab = createBottomTabNavigator();
+
 export default function TabLayoutContainer(){
      return(
+          //Navigation Container Begins
           <NavigationContainer>
                <Tab.Navigator initialRouteName={HomeScreen} tabBarShowLabel={false}>
+                    {
+                         //Tab Screens
+                    }
                     <Tab.Screen 
                     name={"Home"} 
                     component={HomeScreen} 
@@ -59,13 +65,9 @@ export default function TabLayoutContainer(){
                               }}>
                               
                                    <Image source={require('../images/coolicon.png')}/>
-                                   {/* <FontAwesome5 style={{ marginRight: }} name='bell' size={20} color={focused ? COLORS.iconPrimaryColor : COLORS.onFocusedColor}/> */}
                                    
                               
                          </TouchableOpacity>
-                         // <View>
-                         //      
-                         // </View>
                     ),
                     tabBarLabel: ({focused}) => (
                          <Text style={{color: focused ? 'white' : 'white', fontSize: 10}}>Notifications</Text>

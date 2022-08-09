@@ -1,10 +1,12 @@
 import * as React from 'react'
 import { View, Image, TouchableOpacity, Text } from 'react-native';
+import { SIZES } from '../Constants/Tools';
 
+//This components carries the screen first icons
 export default function TopIcons(){
      return(
           <View>
-               <View style={{flexDirection: 'row', justifyContent: 'space-between', paddingTop: 15, paddingLeft: 25, paddingRight: 25, alignItems: 'center'}}>
+               <View style={{flexDirection: 'row', justifyContent: 'space-between', paddingTop: 15, paddingLeft: SIZES.sideMarginLeft, paddingRight: SIZES.sideMarginRight, alignItems: 'center'}}>
                     <TouchableOpacity>
                          <Image source={require('../images/backButton.png')}/>
                     </TouchableOpacity>
@@ -14,9 +16,9 @@ export default function TopIcons(){
                     
                </View>
                <Text style={{
-                    fontWeight: '600',
-                    fontSize: 20,
-                    lineHeight: 30,
+                    fontWeight: SIZES.headerFontWeight,
+                    fontSize: SIZES.headerFontSize,
+                    lineHeight: SIZES.headerLineheight,
                     textAlign: 'center'
                }}>
                     Task Tracker

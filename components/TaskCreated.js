@@ -3,6 +3,8 @@ import { View, Image, TouchableOpacity, Text, TextInput, ScrollView } from 'reac
 import { COLORS } from '../Constants/colors';
 import { SIZES } from '../Constants/Tools';
 
+
+//This component carries task created
 export default function TaskCreated(){
      return(
                <View>
