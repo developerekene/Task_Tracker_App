@@ -1,7 +1,39 @@
-import * as React from 'react'
-import { View, Image, TouchableOpacity, Text, TextInput } from 'react-native';
+import React, { useState} from 'react'
+import { 
+     View, 
+     Image, 
+     TouchableOpacity, 
+     Text, 
+     TextInput, 
+     Alert 
+} from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-export default function InputData(){
+ 
+
+ function InputData(){
+     const [title, setTitle] = useState("");
+     const [body, setBody] = useState("");
+
+     const myData = async () => {
+          if (title.length == 0 && body.length == 0) {
+               Alert.alert('Warning', "Please input data")
+          }else {
+               try{
+                    const task = {
+                         myTitle: title,
+                         myBody: body
+                    }
+                    await AsyncStorage.setItem('taskCreated', JSON.stringify(task));
+                    Alert.alert("Success", "Your title has been saved");
+               }catch (error){
+                    console.warn(error)
+               }
+          }
+          
+     }
+     console.log(title)
+     
      return(
           <View style={{paddingLeft: 25, paddingRight: 25}}>
                <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
@@ -9,19 +41,35 @@ export default function InputData(){
                          <Text style={{fontWeight: '400', fontSize: 18, lineHeight: 27}}>
                               Title 
                          </Text>
-                         <TextInput style={{height: 25, paddingLeft: 10, marginLeft: 10, width: 270}}/>
+                         <TextInput 
+                         onChangeText={(value)=> setTitle(value)}
+                         style={{height: 25, paddingLeft: 10, marginLeft: 10, width: 270}}/>
                     </View>
                     <View style={{flexDirection: 'row'}}>
                          <TouchableOpacity>
                               <Image source={require('../images/check-line.png')}/>
                          </TouchableOpacity>
-                         <TouchableOpacity>
+                         <TouchableOpacity
+                         // onPress={myData}
+                         >
                               <Image source={require('../images/pen-2-line.png')}/>
                          </TouchableOpacity>
                     </View>
                </View>
                <View>
-                    <TextInput style={{height: 147, backgroundColor: '#B8FDBB', borderRadius: 12, marginTop: 10, padding: 1}}/>
+                    {
+                         //this is the input field i want to get data from
+                    }
+                    <TextInput 
+                    style={{
+                         height: 147, 
+                         backgroundColor: '#B8FDBB', 
+                         borderRadius: 12, 
+                         marginTop: 10, 
+                         padding: 1
+                         
+                         }}
+                         onChangeText={(value)=> setBody(value)}/>
                </View>
                <View style={{
                     flexDirection: 'row',
@@ -66,3 +114,5 @@ export default function InputData(){
           </View>
      )
 }
+
+export default InputData;

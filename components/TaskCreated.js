@@ -2,10 +2,21 @@ import * as React from 'react'
 import { View, Image, TouchableOpacity, Text, TextInput, ScrollView } from 'react-native';
 import { COLORS } from '../Constants/colors';
 import { SIZES } from '../Constants/Tools';
+import { myData } from './InputData';
 
 
 //This component carries task created
 export default function TaskCreated(){
+     const getUser = async () => {
+          try {
+            const savedUser = await AsyncStorage.getItem("taskCreated");
+            const currentUser = JSON.parse(savedUser);
+            
+          } catch (error) {
+            console.log(error);
+          }
+     };
+     //    console.warn(currentUser);
      return(
                <View>
                <View style={{justifyContent: 'space-between', flexDirection: 'row', marginLeft: 25, marginRight: 25, marginTop: 15, marginBottom: 15, }}>
@@ -86,6 +97,23 @@ export default function TaskCreated(){
                     <View style={{alignItems: 'center', marginBottom: 30}}>
                          <Image style={{paddingRight: 5}} source={require('../images/Chart13.png')}/>
                     </View>
+                    {/* <TouchableOpacity style={{
+                              backgroundColor: COLORS.iconPrimaryColor, 
+                              height: 50, 
+                              width: 50, 
+                              padding: 12, 
+                              borderRadius: 50, 
+                              alignItems: 'center',
+                              position: 'absolute',
+                              bottom: '20%'
+                              }}
+                              // onPress={{}}
+                              >
+                              
+                                   <Image source={require('../images/coolicon.png')}/>
+                                   
+                              
+                    </TouchableOpacity> */}
           </View>
           
                

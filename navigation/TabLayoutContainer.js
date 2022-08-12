@@ -9,6 +9,7 @@ import HomeScreen from './TabScreens/HomeScreen';
 import NotificationScreen from './TabScreens/NotificationScreen';
 import SearchScreen from './TabScreens/SearchScreen';
 import SettingScreen from './TabScreens/SettingScreen';
+import { myData } from '../components/InputData';
 
 //Importing Color
 import { COLORS } from '../Constants/colors';
@@ -52,7 +53,7 @@ export default function TabLayoutContainer(){
 
                          }}/>
                     <Tab.Screen name={"EmptyScreen"} component={MyEmptyScreen} options={{headerShown: false,
-                    tabBarIcon: ({focused}) => (
+                    tabBarIcon: () => (
                          
                          <TouchableOpacity style={{
                               backgroundColor: COLORS.iconPrimaryColor, 
@@ -62,7 +63,9 @@ export default function TabLayoutContainer(){
                               borderRadius: 50, 
                               alignItems: 'center',
                               marginTop: -30
-                              }}>
+                              }}
+                              onPress={{}}
+                              >
                               
                                    <Image source={require('../images/coolicon.png')}/>
                                    
