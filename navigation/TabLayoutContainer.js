@@ -13,11 +13,33 @@ import { myData } from '../components/InputData';
 
 //Importing Color
 import { COLORS } from '../Constants/colors';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 //Creating variable for bottom tabs
 const Tab = createBottomTabNavigator();
 
-export default function TabLayoutContainer(){
+export default function TabLayoutContainer({navigation}){
+
+     const getUser = async () => {
+          // console.warn(" Ekene ")
+          try {
+            AsyncStorage.getItem('taskCreated').then(value => {
+                 let onlyTitle = JSON.parse(value).myTitle
+               console.warn(onlyTitle)
+                 if(value != null){
+
+                    //   navigation.navigate('Home', JSON.parse(value).myTitle)
+                 }
+                 
+            }).catch(error => {
+                 console.warn(error)
+            })
+          } catch (error) {
+            console.log(error);
+          }
+     };
+        
+
      return(
           //Navigation Container Begins
           <NavigationContainer>
@@ -64,7 +86,7 @@ export default function TabLayoutContainer(){
                               alignItems: 'center',
                               marginTop: -30
                               }}
-                              onPress={{}}
+                              onPress={getUser}
                               >
                               
                                    <Image source={require('../images/coolicon.png')}/>

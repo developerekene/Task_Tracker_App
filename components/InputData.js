@@ -9,15 +9,14 @@ import {
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
- 
 
  function InputData(){
      const [title, setTitle] = useState("");
      const [body, setBody] = useState("");
 
      const myData = async () => {
-          if (title.length == 0 && body.length == 0) {
-               Alert.alert('Warning', "Please input data")
+          if (title.length == 0 || body.length == 0) {
+               Alert.alert('Warning', "Please fill all input fields")
           }else {
                try{
                     const task = {
@@ -25,14 +24,14 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
                          myBody: body
                     }
                     await AsyncStorage.setItem('taskCreated', JSON.stringify(task));
-                    Alert.alert("Success", "Your title has been saved");
+                    Alert.alert("Success", "The data was saved!");
+                    // console.warn("Needed Data", task)
                }catch (error){
                     console.warn(error)
                }
           }
           
      }
-     console.log(title)
      
      return(
           <View style={{paddingLeft: 25, paddingRight: 25}}>
@@ -50,7 +49,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
                               <Image source={require('../images/check-line.png')}/>
                          </TouchableOpacity>
                          <TouchableOpacity
-                         // onPress={myData}
+                         onPress={myData}
                          >
                               <Image source={require('../images/pen-2-line.png')}/>
                          </TouchableOpacity>

@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { useState, useEffect } from 'react'
 import { View, Image, TouchableOpacity, Text, TextInput, ScrollView } from 'react-native';
 import { COLORS } from '../Constants/colors';
 import { SIZES } from '../Constants/Tools';
@@ -6,17 +6,46 @@ import { myData } from './InputData';
 
 
 //This component carries task created
-export default function TaskCreated(){
+export default function TaskCreated({navigation}){
+     const [data, setData] = useState('')
+     
+
+     useEffect(() => {
+          getUser()
+     }, []);
+
      const getUser = async () => {
+          // console.warn(" Ekene ")
           try {
-            const savedUser = await AsyncStorage.getItem("taskCreated");
-            const currentUser = JSON.parse(savedUser);
-            
+            AsyncStorage.getItem('taskCreated').then(value => {
+                 let onlyTitle = JSON.parse(value).myTitle
+                    console.warn(onlyTitle)
+                 if(onlyTitle != null){
+                      setData(onlyTitle)
+                    //   navigation.navigate('Home', JSON.parse(value).myTitle)
+                 }
+                 
+            }).catch(error => {
+                 console.warn(error)
+            })
           } catch (error) {
             console.log(error);
           }
      };
-     //    console.warn(currentUser);
+     console.warn(data)
+
+     // const [title, setTitle] = useState("");
+     // const [body, setBody] = useState("");
+     // const getUser = async () => {
+     //      try {
+     //        const savedUser = await AsyncStorage.getItem("taskCreated");
+     //        const currentUser = JSON.parse(savedUser);
+            
+     //      } catch (error) {
+     //        console.log(error);
+     //      }
+     // };
+     // //    console.warn(currentUser);
      return(
                <View>
                <View style={{justifyContent: 'space-between', flexDirection: 'row', marginLeft: 25, marginRight: 25, marginTop: 15, marginBottom: 15, }}>
@@ -40,7 +69,7 @@ export default function TaskCreated(){
                          <View style={{flexDirection: 'row',}}>
                               <Image style={{marginRight: 10}} source={require('../images/Rectangle3.png')}/>
                               <Text style={{fontSize: 12}}>
-                                   Contact the CEO of Decagon.
+                                   {data}
                               </Text>
                          </View>
                          <View style={{flexDirection: 'row'}}>
